@@ -25,7 +25,10 @@ curl -fsSL https://raw.githubusercontent.com/GreatBigM/workbench-skill/main/inst
 git clone https://github.com/GreatBigM/workbench-skill.git
 
 # 2. 复制到 Hermes 的 skills 目录（不经过安全扫描）
-cp -r workbench-skill/skills/workbench-workflow ~/.hermes/skills/workbench-workflow
+mkdir -p ~/.hermes/skills/workbench-workflow
+cp workbench-skill/SKILL.md ~/.hermes/skills/workbench-workflow/
+cp -r workbench-skill/templates ~/.hermes/skills/workbench-workflow/
+cp -r workbench-skill/references ~/.hermes/skills/workbench-workflow/
 
 # 3. 会话内 /reload-skills，或新开会话自动加载
 ```

@@ -2,6 +2,9 @@
 name: workbench-workflow
 description: 项目任务管理体系 — 0_workbench/ 目录结构、change 四要素生命周期、references 产出规范、design 吸收、spec 维护
 category: knowledge
+metadata:
+  hermes:
+    triggers: [workbench, change, 新建任务, 闭环, 验收, 归档, spec, design吸收, 四要素]
 ---
 
 # 项目任务管理（workbench）
