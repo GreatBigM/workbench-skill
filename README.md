@@ -7,7 +7,7 @@ workbench 让嵌入式/软件开发团队的项目任务管理跟代码走：每
 ## 安装（推荐：一键脚本）
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/GreatBigM/workbench-skill/main/install.sh | bash
+curl -fsSL https://gitee.com/GreatBigM/workbench-skill/raw/main/install.sh | bash
 # 安装后：会话内 /reload-skills，或新开会话自动加载
 ```
 
@@ -22,7 +22,7 @@ curl -fsSL https://raw.githubusercontent.com/GreatBigM/workbench-skill/main/inst
 
 ```bash
 # 1. 克隆本仓库
-git clone https://github.com/GreatBigM/workbench-skill.git
+git clone https://gitee.com/GreatBigM/workbench-skill.git
 
 # 2. 复制到 Hermes 的 skills 目录（不经过安全扫描）
 mkdir -p ~/.hermes/skills/workbench-workflow
