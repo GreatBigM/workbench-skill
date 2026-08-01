@@ -4,11 +4,21 @@ Hermes Agent 项目任务管理技能（skill）—— 基于 0_workbench/ 目�
 
 workbench 让嵌入式/软件开发团队的项目任务管理跟代码走：每个 change 用 goal/scheme/tasks/check 四要素驱动，验收标准开工前就定好，闭环后 design 吸收 + spec 维护 + 知识沉淀。本仓库以 [skills.sh](https://skills.sh) 标准布局分发（`skills/workbench-workflow/`），克隆后手动复制到 skills 目录即可用。
 
-## 安装
+## 安装（推荐：一键脚本）
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/GreatBigM/workbench-skill/main/install.sh | bash
+# 安装后：会话内 /reload-skills，或新开会话自动加载
+```
+
+> 脚本等价于手动复制（clone + cp），不经过安全扫描，可先审阅脚本内容再执行。
+> 已安装时自动备份旧版本到 `~/.hermes/skills/workbench-workflow.bak.<时间戳>`。
+
+## 安装（备选：手动复制）
 
 > ⚠️ 注意：`hermes skills install`（tap/URL 方式）对 workbench-workflow 会触发安全扫描拦截——
 > 扫描器将「引用 AGENTS.md」等判定为 dangerous（误报，workbench 本质是管理 AGENTS.md 的任务体系），
-> 且 community 来源 + dangerous 判定不可用 --force 绕过。**请使用手动复制安装，不经过扫描。**
+> 且 community 来源 + dangerous 判定不可用 --force 绕过。**请使用一键脚本或手动复制安装，不经过扫描。**
 
 ```bash
 # 1. 克隆本仓库
