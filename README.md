@@ -69,6 +69,7 @@ workbench-skill/
 ├── README.md                        ← 本文件
 ├── install.sh                       ← 一键安装脚本
 ├── SKILL.md                         ← 操作手册（触发条件/四要素/流转/反模式，仓库根即 skill）
+├── templates/                       ← change 四要素 + spec + reference 六模板
 └── references/
     └── workbench-spec.md            ← 完整规范（四要素边界约定/拒绝态/实施清单）
 ```

@@ -27,6 +27,7 @@ fi
 echo "==> 安装到 ${DEST}"
 mkdir -p "${DEST}"
 cp "${TMP}/repo/SKILL.md" "${DEST}/"
+cp -r "${TMP}/repo/templates" "${DEST}/"
 cp -r "${TMP}/repo/references" "${DEST}/"
 
 echo ""

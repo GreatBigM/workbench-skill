@@ -47,6 +47,8 @@ category: knowledge
 | tasks.md | 做到哪 | 每步完成打勾，过时即废 |
 | check.md | 怎么算完 | 可测试的定量标准 |
 
+> 模板：`templates/goal.md`、`templates/scheme.md`、`templates/tasks.md`、`templates/check.md`——建 change 时从模板复制，填内容即可。
+
 ### check.md 写法
 
 必须可测试、定量。反例：「功能正常」。正例：
@@ -74,6 +76,8 @@ archive/ 归档
 ## references 产出规范
 
 仅在 change 产生值得保留的分析/数据时写入。
+
+> 模板：`templates/reference.md`——含 YAML 头骨架（标题/日期/来源/状态/吸收至/摘要）+ 数据表。
 
 ### 命名
 
@@ -120,6 +124,7 @@ design/ 始终是可读的当前架构，不是方案坟场。
 - 单文件，不可拆为文件夹
 - 自带 changelog，不依赖 git log
 - 每次 design 吸收方案后，按需更新约束
+- 新建项目时从 `templates/spec.md` 复制初始化
 
 ### changelog 格式
 
@@ -134,7 +139,7 @@ design/ 始终是可读的当前架构，不是方案坟场。
 ## 新建 change 流程
 
 1. 在 `0_workbench/change/` 下创建 `<change_name>/` 目录
-2. 依次写 goal.md → scheme.md → check.md，tasks.md 边做边填
+2. 依次写 goal.md → scheme.md → check.md，tasks.md 边做边填（从 `templates/` 复制对应模板起步）
 3. 过程中产生的分析报告写入知识库 references/
 4. 四要素缺一不可——验收标准必须在开工前就写好
 
@@ -164,3 +169,10 @@ design/ 始终是可读的当前架构，不是方案坟场。
 ## 相关文档
 
 - `references/workbench-spec.md` — 完整规范（含四要素边界约定、拒绝态、实施清单）
+
+## 支持文件清单
+
+本 skill 依赖以下模板与参考文件（安装时随 SKILL.md 一并打包，请勿删除）：
+
+- 模板：`templates/goal.md`、`templates/scheme.md`、`templates/tasks.md`、`templates/check.md`、`templates/spec.md`、`templates/reference.md`
+- 参考：`references/workbench-spec.md`
