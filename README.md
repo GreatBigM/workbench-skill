@@ -2,7 +2,7 @@
 
 Hermes Agent 项目任务管理技能（skill）—— 基于 0_workbench/ 目录的 change 四要素任务体系。
 
-workbench 让嵌入式/软件开发团队的项目任务管理跟代码走：每个 change 用 goal/scheme/tasks/check 四要素驱动，验收标准开工前就定好，闭环后 design 吸收 + spec 维护 + 知识沉淀。本仓库以 [skills.sh](https://skills.sh) 标准布局分发（`skills/workbench-workflow/`），克隆后手动复制到 skills 目录即可用。
+workbench 让嵌入式/软件开发团队的项目任务管理跟代码走：每个 change 用 goal/scheme/tasks/check 四要素驱动，验收标准开工前就定好，闭环后 design 吸收 + spec 维护 + 知识沉淀。仓库根目录即 skill 本体，用一键脚本或手动复制安装。
 
 ## 安装（推荐：一键脚本）
 
@@ -67,10 +67,10 @@ mkdir -p 0_workbench/change/<change_name>
 ```
 workbench-skill/
 ├── README.md                        ← 本文件
-└── skills/workbench-workflow/       ← skill 本体
-    ├── SKILL.md                     ← 操作手册（触发条件/四要素/流转/反模式）
-    └── references/
-        └── workbench-spec.md        ← 完整规范（四要素边界约定/拒绝态/实施清单）
+├── install.sh                       ← 一键安装脚本
+├── SKILL.md                         ← 操作手册（触发条件/四要素/流转/反模式，仓库根即 skill）
+└── references/
+    └── workbench-spec.md            ← 完整规范（四要素边界约定/拒绝态/实施清单）
 ```
 
 ## 设计理念
