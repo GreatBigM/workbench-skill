@@ -2,7 +2,7 @@
 
 Hermes Agent 项目任务管理技能（skill）—— 基于 0_workbench/ 目录的 change 四要素任务体系。
 
-workbench 让嵌入式/软件开发团队的项目任务管理跟代码走：每个 change 用 goal/scheme/tasks/check 四要素驱动，验收标准开工前就定好，闭环后 design 吸收 + spec 维护 + 知识沉淀。仓库根目录即 skill 本体，用一键脚本或手动复制安装。
+workbench 让嵌入式/软件开发团队的项目任务管理跟代码走：每个 change 用 spec/design/tasks/check 四要素驱动，验收标准开工前就定好，闭环后 design 吸收 + 项目级 spec 维护 + 知识沉淀。仓库根目录即 skill 本体，用一键脚本或手动复制安装。
 
 ## 安装
 
@@ -47,12 +47,12 @@ cp -r workbench-skill/references ~/.hermes/skills/workbench-workflow/
 # 在项目代码仓创建 0_workbench/ 结构（spec/design/change/archive）
 # 新建 change：
 mkdir -p 0_workbench/change/<change_name>
-# 依次写四要素（确认顺序：goal → check → scheme → tasks）：
-#   goal.md   ← 目标：改什么（成功标准量化表：维度/基线/目标）
-#   check.md  ← 验收：怎么算完（可执行命令，分类组织）
-#   scheme.md ← 方案：怎么改（事实约束 → 现状 → 目标 → 核心设计）
+# 依次写四要素（确认顺序：spec → check → design → tasks）：
+#   spec.md   ← 规格：要什么（成功标准量化表：维度/基线/目标）
+#   check.md  ← 验收：怎么算完（可执行命令，定量）
+#   design.md ← 设计：怎么改（事实约束 → 现状 → 目标 → 核心设计）
 #   tasks.md  ← 任务：做到哪（分阶段打勾，记 commit hash + 测试数据）
-# 闭环：check 验收通过 → scheme 吸收进 design/ → spec.md 复审更新 → 移 archive/
+# 闭环：check 验收通过 → design 合并进 design/ → 项目级 spec.md 复审更新 → 移 archive/
 ```
 
 ## 核心概念
@@ -61,17 +61,17 @@ mkdir -p 0_workbench/change/<change_name>
 
 | 文件 | 内容 | 一句话 |
 |------|------|--------|
-| goal.md | 目标 | 改什么（含成功标准量化表） |
-| scheme.md | 方案 | 怎么改（可评审技术路径） |
+| spec.md | 规格 | 要什么（成功标准量化表 + 约束） |
+| design.md | 设计 | 怎么改（可评审技术路径） |
 | tasks.md | 任务 | 做到哪（每步打勾，记 commit/测试数据/验收结果） |
 | check.md | 验收 | 怎么算完（可测试定量标准） |
 
 **铁律**：
-- 标准由 goal 定，方法由 check 给，结果落 tasks——同一信息不两处复述
+- 标准由 spec 定，方法由 check 给，结果落 tasks——同一信息不两处复述
 - check 必须可测试、定量（反例「功能正常」；正例「iperf3 TCP RX ≥ 80Mbps」）
 - spec.md 永远是单文件 + 自带 changelog，不依赖 git log
 - design 吸收 = 合并进现有文档，不堆叠文件
-- 归档必检：scheme 吸收 + spec 复审 + 产出物落知识库，三项全绿才算完
+- 归档必检：design 合并 + 项目级 spec 复审 + 产出物落知识库，三项全绿才算完
 
 ## 仓库结构
 
@@ -89,7 +89,7 @@ workbench-skill/
 ## 设计理念
 
 - **任务跟代码走**：0_workbench/ 在项目代码仓内，AGENTS.md 顶层独立——workbench 是附加层，不绑定 AI 入口
-- **验收驱动**：先定 goal 标准 → 再定 check 方法 → 最后设计 scheme、拆 tasks
+- **验收驱动**：先定 spec 标准 → 再定 check 方法 → 最后设计 design、拆 tasks
 - **拒绝态明确**：证伪的 change 照留四要素 + 标注拒绝，归档不分成败
 - **知识沉淀**：分析/实验产出写入知识库 references/（YYYYMMDD-标题.md，两态裁决）
 

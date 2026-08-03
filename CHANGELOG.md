@@ -2,6 +2,17 @@
 
 本文件记录版本历史。版本号定义在 SKILL.md frontmatter 的 `version` 字段（单一真相源）。
 
+## 3.0.0 (2026-08-03)
+
+### Changed（四要素命名体系重构）
+- **goal.md → spec.md**：目标改规格——「标准由 spec 定」语义顺滑；SPEC=可更改规格身份统一（change 级 spec + 项目级 spec 两级，引用写全路径区分）
+- **scheme.md → design.md**：方案改设计——与 design/ 目录流转对齐（design 要点合并进 design/）；消除 scheme/schema 与宪法 SCHEMA 的拼写混淆
+- **templates/ 收敛四模板**：spec/design/tasks/check 与四要素一一对应；删除项目约束模板（项目级 spec 按宪法 §五 直接建）和 reference.md 模板（产出物格式见宪法 §四）
+- **§四 重定位「知识沉淀衔接」**：workbench 面向任务段（四要素定义任务内工程流转），实践完成触发知识沉淀（产出物入知识库 references/），知识库侧机制由对应体系承担，本 skill 不规定（SKILL 不知道 SKILL 原则）
+- 项目级 spec.md 全文档加限定（区分 change 级 spec / 项目级 spec）
+- 存量 archive 快照（goal.md/scheme.md）不动，文件名不变原则
+- 版本 2.0.0 → 3.0.0
+
 ## 2.0.0 (2026-08-03)
 
 ### Changed（参考分层 A 模式 + 概念平级对齐）

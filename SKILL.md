@@ -1,7 +1,7 @@
 ---
 name: workbench-workflow
 description: 项目任务管理体系 — change 四要素生命周期、闭环、spec 维护（宪法见 SCHEMA.md）
-version: 2.0.0
+version: 3.0.0
 category: knowledge
 metadata:
   hermes:
@@ -10,7 +10,7 @@ metadata:
 
 # 项目任务管理（workbench）
 
-> 宪法（做成什么样）：`SCHEMA.md`——目录结构/四要素边界/拒绝态/流转规则/产出规范/spec 维护/design 吸收
+> 宪法（做成什么样）：`SCHEMA.md`——目录结构/四要素边界/拒绝态/流转规则/知识沉淀衔接/项目级 spec 维护/design 吸收
 > 2026-07-24 确立。任务体系跟代码走，知识产出留在知识库。
 
 ## ⚡ 使用方式（AI 替你完成）
@@ -50,13 +50,13 @@ AI:  按四要素模板创建/更新文档 → 回报结果
 | 修改 change | 更新四要素 | SCHEMA.md §二 |
 | 闭环 change | 验收→吸收→更新 spec→归档 | SCHEMA.md §三 |
 | 查阅状态 | 读 spec.md | SCHEMA.md §五 |
-| 写 references 产出 | YYYYMMDD 命名 + 两态 | SCHEMA.md §四 |
+| 触发知识沉淀（产出物入知识库） | YYYYMMDD 命名 + 两态 | SCHEMA.md §四 |
 
-> 完整规范（做成什么样）见 `SCHEMA.md`：目录结构/四要素边界约定/拒绝态/流转规则/references 规范/spec.md 维护/design 吸收原则。SKILL.md 只承载操作流程。
+> 完整规范（做成什么样）见 `SCHEMA.md`：目录结构/四要素边界约定/拒绝态/流转规则/知识沉淀衔接/项目级 spec.md 维护/design 吸收原则。SKILL.md 只承载操作流程。
 
 ## change 四要素（速查）
 
-goal（目标）· scheme（方案）· tasks（任务）· check（验收）——四文件同目录 `change/<name>/`，模板 `templates/*.md`；边界约定（标准由 goal 定 / 方法由 check 给 / 结果落 tasks）见 `SCHEMA.md` §二。
+spec（规格：成功标准+约束）· design（设计：怎么改）· tasks（任务）· check（验收）——四文件同目录 `change/<name>/`，模板 `templates/*.md`；边界约定（标准由 spec 定 / 方法由 check 给 / 结果落 tasks）见 `SCHEMA.md` §二。
 
 ### check.md 写法
 
@@ -72,19 +72,19 @@ goal（目标）· scheme（方案）· tasks（任务）· check（验收）—
 ## 新建 change 流程
 
 1. 在 `0_workbench/change/` 下创建 `<change_name>/` 目录
-2. 依次写 goal.md → scheme.md → check.md，tasks.md 边做边填（从 `templates/` 复制对应模板起步）
+2. 依次写 spec.md → design.md → check.md，tasks.md 边做边填（从 `templates/` 复制对应模板起步）
 3. 过程中产生的分析报告写入知识库 references/
 4. 四要素缺一不可——验收标准必须在开工前就写好
 
 ## change 闭环流程
 
 1. 对照 check.md 逐条确认通过
-2. 提取 scheme.md 关键设计决策，合并到 design/ 对应文档
-3. 判断 goal.md 中哪些是持久约束 → 更新 spec.md + changelog
+2. 提取 design.md 关键设计决策，合并到 design/ 对应文档
+3. 判断 spec.md 中哪些成为持久约束 → 更新项目级 spec.md + changelog
 4. 整个 `<change_name>/` 目录移至 archive/
 5. git commit（项目仓）
 
-> 归档检查清单：① scheme 已吸收进 design ② spec 已复审并按需更新 ③ 产出物已落知识库。三项全绿才算归档完成（SCHEMA.md §三）。
+> 归档检查清单：① design 要点已合并进 design/ ② 项目级 spec.md 已复审并按需更新 ③ 产出物已落知识库。三项全绿才算归档完成（SCHEMA.md §三）。
 
 ## 相关文档
 
@@ -95,6 +95,6 @@ goal（目标）· scheme（方案）· tasks（任务）· check（验收）—
 
 本 skill 依赖以下模板与参考文件（安装时随 SKILL.md 一并打包，请勿删除）：
 
-- 模板：`templates/goal.md`、`templates/scheme.md`、`templates/tasks.md`、`templates/check.md`、`templates/spec.md`、`templates/reference.md`
+- 模板：`templates/spec.md`、`templates/design.md`、`templates/tasks.md`、`templates/check.md`
 - 宪法：`SCHEMA.md`（与 SKILL.md 平级，随安装拷贝）
 - 参考：`references/troubleshooting.md`
