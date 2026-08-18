@@ -4,7 +4,7 @@ description: 项目任务管理体系：change 四要素生命周期、闭环验
 version: 3.1.0
 category: knowledge
 metadata:
-  hermes:
+  agent:
     triggers: [workbench, change, 新建任务, 闭环, 验收, 归档, spec, design吸收, 四要素]
 ---
 
