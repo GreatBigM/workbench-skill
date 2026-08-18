@@ -1,19 +1,19 @@
 # workbench-skill
 
-Hermes Agent 项目任务管理技能（skill）—— 基于 0_workbench/ 目录的 change 四要素任务体系。
+Agent 项目任务管理技能（skill）—— 基于 0_workbench/ 目录的 change 四要素任务体系。
 
 workbench 让嵌入式/软件开发团队的项目任务管理跟代码走：每个 change 用 spec/design/tasks/check 四要素驱动，验收标准开工前就定好，闭环后 design 吸收 + 项目级 spec 维护 + 知识沉淀。仓库根目录即 skill 本体，用一键脚本或手动复制安装。
 
 ## 安装
 
-本 skill 支持多 agent 目标：Hermes / Claude Code / Codex。安装脚本自动探测本机已安装的 agent，让用户选择安装目标。
+本 skill 支持多 agent 目标：Hermes / Claude Code / Codex / ZCode。安装脚本自动探测本机已安装的 agent，让用户选择安装目标。
 
 ```bash
 # 方式 1：交互选择安装目标（推荐，先下载再执行以保留交互）
 curl -fsSL https://gitee.com/GreatBigM/workbench-skill/raw/main/install.sh -o /tmp/install.sh && bash /tmp/install.sh
 
-# 方式 2：指定目标（非交互）
-curl -fsSL https://gitee.com/GreatBigM/workbench-skill/raw/main/install.sh | bash -s -- --target hermes,claude
+# 方式 2：指定目标（非交互，含 ZCode）
+curl -fsSL https://gitee.com/GreatBigM/workbench-skill/raw/main/install.sh | bash -s -- --target hermes,claude,zcode
 
 # 方式 3：安装到全部检测到的 agent
 curl -fsSL https://gitee.com/GreatBigM/workbench-skill/raw/main/install.sh | bash -s -- --all
@@ -32,11 +32,12 @@ curl -fsSL https://gitee.com/GreatBigM/workbench-skill/raw/main/install.sh | bas
 # 1. 克隆本仓库
 git clone https://gitee.com/GreatBigM/workbench-skill.git
 
-# 2. 复制到 Hermes 的 skills 目录（不经过安全扫描）
+# 2. 复制到目标工具的 skills 目录（不经过安全扫描）
 mkdir -p ~/.hermes/skills/workbench-workflow
 cp workbench-skill/SKILL.md ~/.hermes/skills/workbench-workflow/
 cp -r workbench-skill/templates ~/.hermes/skills/workbench-workflow/
 cp -r workbench-skill/references ~/.hermes/skills/workbench-workflow/
+# ZCode: cp -r 到 ~/.zcode/skills/workbench-workflow/
 
 # 3. 会话内 /reload-skills，或新开会话自动加载
 ```

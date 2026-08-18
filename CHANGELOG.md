@@ -2,6 +2,12 @@
 
 本文件记录版本历史。版本号定义在 SKILL.md frontmatter 的 `version` 字段（单一真相源）。
 
+## 3.2.0 (2026-08-18)
+
+### Added
+
+- **ZCode 安装目标**：install.sh 支持 ZCode（探测 `~/.zcode` → 安装到 `~/.zcode/skills/workbench-workflow`），README 补 `--target zcode` 示例，标题泛化「Agent 项目任务管理技能」（去 Hermes 特指）
+
 ## 3.1.0 (2026-08-06)
 
 ### Changed（合并 openspec-workflow 执行防护）

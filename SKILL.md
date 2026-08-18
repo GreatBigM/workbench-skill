@@ -1,7 +1,7 @@
 ---
 name: workbench-workflow
 description: 项目任务管理体系：change 四要素生命周期、闭环验收、spec 维护，任务全程可控。
-version: 3.1.0
+version: 3.2.0
 category: knowledge
 metadata:
   agent:
