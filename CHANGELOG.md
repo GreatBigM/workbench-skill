@@ -2,6 +2,13 @@
 
 本文件记录版本历史。版本号定义在 SKILL.md frontmatter 的 `version` 字段（单一真相源）。
 
+## 3.3.0 (2026-08-18)
+
+### Changed（审查修复）
+
+- **README 安全警告泛化**：`hermes skills install` → 「部分 agent 的 skills install」（多 agent 措辞统一）
+- 版本 3.2.0 → 3.3.0
+
 ## 3.2.0 (2026-08-18)
 
 ### Added

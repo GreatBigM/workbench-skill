@@ -24,7 +24,7 @@ curl -fsSL https://gitee.com/GreatBigM/workbench-skill/raw/main/install.sh | bas
 
 ## 安装（备选：手动复制）
 
-> ⚠️ 注意：`hermes skills install`（tap/URL 方式）对 workbench-workflow 会触发安全扫描拦截——
+> ⚠️ 注意：部分 agent 的 `skills install`（tap/URL 方式）对 workbench-workflow 会触发安全扫描拦截——
 > 扫描器将「引用 AGENTS.md」等判定为 dangerous（误报，workbench 本质是管理 AGENTS.md 的任务体系），
 > 且 community 来源 + dangerous 判定不可用 --force 绕过。**请使用一键脚本或手动复制安装，不经过扫描。**
 
