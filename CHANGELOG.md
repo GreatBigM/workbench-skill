@@ -55,3 +55,10 @@
 - templates 六件套：goal.md / scheme.md / tasks.md / check.md / spec.md / reference.md
 - references/workbench-spec.md 完整规范
 - 仓库根目录即 skill 本体布局，install.sh 一键安装
+
+## 3.3.1 (2026-08-28)
+
+### Added
+
+- install.sh 新增 pi 安装目标（探测 `~/.pi/agent` → 安装到 `~/.pi/agent/skills/<skill>`，pi 自动发现）
+- 版本 3.3.0 → 3.3.1
