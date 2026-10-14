@@ -6,6 +6,7 @@
 - **`--target hermes,claude`（空格形式）从未生效**：解析只认 `--target=`，空格形式把值吞成空串后落进"非交互 = 装全部"分支——而 README / 用法行 / 脚本头部**三处文档全写的空格形式**。现两种形式都支持，且 `--target` 缺参数时直接报错退出（不再静默装全部）。
 - **备份落在 skills 扫描根之内**：旧版备份写成 `<skills>/<name>.bak.<时间戳>`，而 agent 按「含 SKILL.md 的目录」发现技能、不看目录名 ⇒ 备份被当成**第二个同名技能**加载（重名歧义下静默跳过其一）。现备份落 `<tool 根>/skills-backup/`（扫描根之外），README 与脚本尾注同步。
 - **挂上 pre-push 闸门（脱敏 + CHANGELOG 同步）**：`scripts/publish-check.py`（扫项目代号 / 内网 IP / MAC / 长 hash / 凭据 / 本机路径，自带 `--self-test`）+ `scripts/hooks/pre-push`；启用一次 `git config core.hooksPath scripts/hooks`。理由与脱敏规则同源：**靠人记必然回潮**，检查要做成"推送时自动拦"而不是"记得手动跑"。CHANGELOG 闸门名单 = SKILL.md / SCHEMA.md / install.sh / templates/ / scripts/ / references/。
+- **脱敏：正文里的项目代号 / 样机 IP / 代码树路径换占位符**——闸门首扫 5 处，逐条判定后替换（`<项目A>` / `<样机IP A>` / 代码树 `<项目A>_wifi`）。这些标识已随历史提交公开过，本次只保证往后的版本不再含；**注意闸门区分大小写**：正文里的大写写法（如 HM6502）不在命中范围内，属已知覆盖缺口。
 - 版本 3.3.2 → 3.3.3
 
 本文件记录版本历史。版本号定义在 SKILL.md frontmatter 的 `version` 字段（单一真相源）。
