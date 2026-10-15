@@ -28,9 +28,11 @@ AGENTS.md 在代码仓顶层——无论 workbench 是否存在，AI 都能独�
 ```
 知识库 (<知识库>/)
 └── projects/<项目>/
-    └── references/          ← 分析报告、基线、实验数据
+    └── resource/            ← 素材：分析报告、基线、实验数据（不进 INDEX、不做双链）
         └── YYYYMMDD-标题.md ← 扁平，不分子目录
 ```
+
+> 知识库目录结构唯一真相源见 qwiki skill 的 `SCHEMA.md`，本处不重复定义。
 
 ## 二、change 四要素
 
@@ -55,7 +57,7 @@ AGENTS.md 在代码仓顶层——无论 workbench 是否存在，AI 都能独�
 - **方法只放 check**：验证/验收的可执行命令专一放 check「验收方法」。design 不写验证方法，只写设计本身的「观测点」（本设计需特别看什么，如 pool recycle/fallback 计数）。
 - **边界 vs 清单**：spec「副作用约束」写边界原则（不碰 rxbuff/协议栈/网络栈），design「改动范围」写精确文件清单。同一信息不两处复述。
 - **基线权威源在 tasks**：基线数字以 tasks「测试数据」为准，spec 成功标准表、check 验收的基线列引用此处，不另引别处基线。
-- **验收结果落 tasks**：最终验收结论在 check，但「对照结果」（实测值 vs 成功标准表）写 tasks 末尾「验收结果」小节，与测试数据同处，便于一眼看完。
+- **验收结果落 tasks**：check 只放方法；「对照结果」（实测值 vs 成功标准表）与判定写 tasks 末尾「验收结果」小节，与测试数据同处，便于一眼看完。
 
 ### 拒绝态（证伪/废弃）
 
@@ -100,7 +102,7 @@ change/ 施工中
     │         2. 复审项目级 spec.md 全文 → 判断本次 change 是否新增/更新约束、
     │            已知天花板、配置项；有则更新并在「变更记录」记一行
     │            （归档必检，非"按需"——漏更新 spec = 归档未完成）
-    │         3. 产出物    → 写入知识库 references/
+    │         3. 产出物    → 写入知识库 resource/
     │
     └── 不通过 → 回到 design.md / tasks.md 继续迭代，不归档
 ```
@@ -111,7 +113,7 @@ change/ 施工中
 
 ## 四、知识沉淀衔接
 
-workbench 面向任务段：四要素定义任务内部的工程流转。实践完成（闭环第 3 步）时**触发知识沉淀**——产出物写入知识库 references/，后续提炼由知识库侧机制承担，本 skill 不规定。
+workbench 面向任务段：四要素定义任务内部的工程流转。实践完成（闭环第 3 步）时**触发知识沉淀**——产出物写入知识库 resource/，后续提炼由知识库侧机制承担，本 skill 不规定。
 
 **命名**: `YYYYMMDD-标题.md`
 
@@ -158,5 +160,5 @@ workbench 面向任务段：四要素定义任务内部的工程流转。实践�
 
 - [ ] 在项目代码仓创建 `0_workbench/` 结构
 - [ ] 从知识库迁移现有 archive/change/design/spec 到 0_workbench
-- [ ] 清理知识库 projects/，仅保留 references/
+- [ ] 清理知识库 projects/，仅保留 resource/
 - [ ] 确认各项目代码仓顶层已有 AGENTS.md

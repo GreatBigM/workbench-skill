@@ -38,7 +38,9 @@ mkdir -p ~/.hermes/skills/workbench-workflow
 cp workbench-skill/SKILL.md ~/.hermes/skills/workbench-workflow/
 cp -r workbench-skill/templates ~/.hermes/skills/workbench-workflow/
 cp -r workbench-skill/references ~/.hermes/skills/workbench-workflow/
-# ZCode: cp -r 到 ~/.zcode/skills/workbench-workflow/
+cp workbench-skill/SCHEMA.md ~/.hermes/skills/workbench-workflow/   # 宪法，不可省
+cp workbench-skill/CHANGELOG.md ~/.hermes/skills/workbench-workflow/   # 版本历史（install.sh 同样拷贝）
+# ZCode: cp -r 到 ~/.zcode/skills/workbench-workflow/（同样别漏 SCHEMA.md 与 CHANGELOG.md）
 
 # 3. 会话内 /reload-skills，或新开会话自动加载
 ```
@@ -70,7 +72,7 @@ mkdir -p 0_workbench/change/<change_name>
 
 **铁律**：
 - 标准由 spec 定，方法由 check 给，结果落 tasks——同一信息不两处复述
-- check 必须可测试、定量（反例「功能正常」；正例「iperf3 TCP RX ≥ 80Mbps」）
+- check 必须可测试、定量（反例「功能正常」；正例「iperf3 TCP RX ≥ <spec 标准值>」）——阈值一律引自 spec 成功标准表，check 只给方法，不另立标准
 - spec.md 永远是单文件 + 自带 changelog，不依赖 git log
 - design 吸收 = 合并进现有文档，不堆叠文件
 - 归档必检：design 合并 + 项目级 spec 复审 + 产出物落知识库，三项全绿才算完
@@ -84,7 +86,8 @@ workbench-skill/
 ├── SKILL.md                         ← 操作手册（触发条件/操作流程，仓库根即 skill）
 ├── scripts/                       ← 发布闸门（脱敏 + CHANGELOG 同步，**不随安装下发**）
 ├── SCHEMA.md                        ← 宪法（做成什么样：四要素边界/拒绝态/流转/产出规范）
-├── templates/                       ← change 四要素 + spec + reference 六模板
+├── CHANGELOG.md                     ← 版本历史（版本号单一真相源在 SKILL.md frontmatter）
+├── templates/                       ← change 四要素四模板（spec / design / tasks / check）
 └── references/
     └── troubleshooting.md           ← 反模式（坑，按需查）
 ```
@@ -94,7 +97,7 @@ workbench-skill/
 - **任务跟代码走**：0_workbench/ 在项目代码仓内，AGENTS.md 顶层独立——workbench 是附加层，不绑定 AI 入口
 - **验收驱动**：先定 spec 标准 → 再定 check 方法 → 最后设计 design、拆 tasks
 - **拒绝态明确**：证伪的 change 照留四要素 + 标注拒绝，归档不分成败
-- **知识沉淀**：分析/实验产出写入知识库 references/（YYYYMMDD-标题.md，两态裁决）
+- **知识沉淀**：分析/实验产出写入知识库 resource/（YYYYMMDD-标题.md，两态裁决）
 
 ## License
 

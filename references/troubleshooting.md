@@ -10,12 +10,12 @@
 | 验收写「功能正常」 | 验收写可测试的定量标准 |
 | change 闭环不更新 spec | 判断功能是否成为约束，是则更新 |
 | spec 做成文件夹塞子文档 | spec 永远是单文件 |
-| 分析报告放 change 目录 | 放知识库 `references/`，按命名规范 |
+| 分析报告放 change 目录 | 放知识库 `resource/`，按命名规范 |
 | change 只有设计没有验收 | spec/design/tasks/check 四要素缺一不可 |
 | archive 分 completed/abandoned 子目录 | 扁平，读 check.md 知成败 |
 | design 吸收 = 把 design.md 拷过去 | 合并进现有文档对应章节 |
-| references 用子目录按 change 组织 | 扁平，文件名 YYYYMMDD-标题.md |
-| references 无头部元数据 | 必须含标题/日期/来源/状态/摘要 |
+| 素材用子目录按 change 组织 | 扁平，文件名 YYYYMMDD-标题.md |
+| 素材无头部元数据 | 必须含标题/日期/来源/状态/摘要 |
 | spec.md 改完不记录 changelog | 每次改动追加一行 |
 
 ## 根因备注

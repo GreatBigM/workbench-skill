@@ -1,4 +1,4 @@
-# <change_name> — 方案
+# <change_name> — 设计
 
 > 怎么改：可评审的技术路径。
 
